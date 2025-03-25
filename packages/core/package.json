@@ -1,10 +1,8 @@
 {
-  "name": "@monorepo-template/core",
+  "name": "@immo-scraper/core",
   "type": "module",
   "version": "0.0.0",
-  "scripts": {
-    "test": "sst shell vitest"
-  },
+  "scripts": {},
   "exports": {
     "./*": [
       "./src/*/index.ts",
@@ -12,9 +10,6 @@
     ]
   },
   "dependencies": {
-    "sst": "*"
-  },
-  "devDependencies": {
-    "vitest": "^2"
+    "sst": "3.10.11"
   }
 }

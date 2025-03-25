@@ -3,18 +3,23 @@
 export default $config({
   app(input) {
     return {
-      name: "monorepo-template",
+      name: "immo-scraper",
       removal: input?.stage === "production" ? "retain" : "remove",
       protect: ["production"].includes(input?.stage),
       home: "aws",
+      providers: {
+        aws: {
+          profile:
+            input.stage === "production"
+              ? "schwabbrothers-prod"
+              : "schwabbrothers-dev",
+        },
+      },
     };
   },
   async run() {
-    const storage = await import("./infra/storage");
-    await import("./infra/api");
-
-    return {
-      MyBucket: storage.bucket.name,
-    };
+    new sst.aws.Nextjs("WebApp", {
+      path: "./packages/app",
+    });
   },
 });
