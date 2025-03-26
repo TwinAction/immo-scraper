@@ -4,13 +4,15 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {},
+  "scripts": {
+    "sso": "aws sso login --sso-session=schwabbrothers"
+  },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
     "@types/node": "^22.13.13",
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "sst": "3.10.11"
+    "sst": "^3.10.13"
   }
 }
