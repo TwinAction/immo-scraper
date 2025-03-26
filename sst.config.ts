@@ -24,7 +24,9 @@ export default $config({
 
     new sst.aws.Cron("CronJob", {
       schedule: "rate(1 minute)",
-      function: "./package/functions/src/cron.handler",
+      function: "./packages/functions/src/cron.handler",
     });
+
+    
   },
 });
