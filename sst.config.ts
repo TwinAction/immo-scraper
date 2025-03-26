@@ -22,13 +22,9 @@ export default $config({
       path: "./packages/app",
     });
 
-    new sst.aws.Cron("ScheduledFunction", {
-      schedule: "rate(1 hour)",
-      job: {
-        function: {
-          handler: "packages/functions/src/index.hello",
-        },
-      },
+    new sst.aws.Cron("CronJob", {
+      schedule: "rate(1 minute)",
+      function: "./package/functions/src/cron.handler",
     });
   },
 });
