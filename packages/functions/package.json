@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-template/functions",
+  "name": "@immo-scraper/functions",
   "version": "0.0.0",
   "type": "module",
   "dependencies": {
