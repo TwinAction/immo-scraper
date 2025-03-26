@@ -5,6 +5,10 @@
 
 declare module "sst" {
   export interface Resource {
+    "BrokerTable": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
     "WebApp": {
       "type": "sst.aws.Nextjs"
     }
